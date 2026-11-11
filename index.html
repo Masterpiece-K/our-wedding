@@ -491,7 +491,8 @@
 <body>
 <!-- 花瓣/星光动效 -->
 <div id="particles"></div>
-<!-- 背景音乐 -->
+
+<!-- 背景音乐（已修复闭合标签） -->
 <audio id="bgMusic" loop preload="auto">
   <source src="music.mp3" type="audio/mpeg" />
 
@@ -502,6 +503,7 @@
     <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
   </svg>
 </div>
+
 <!-- 封面 -->
 <section class="cover">
   <img src="cover.jpg" alt="婚礼封面" />
@@ -514,6 +516,7 @@
     <div class="date" style="margin-top:6px;font-size:14px;opacity:0.85;">丙午马年十月初三 · 中午 11:55</div>
   </div>
 </section>
+
 <!-- 邀请正文 -->
 <section class="invitation fade-in">
   <div class="container">
@@ -531,6 +534,7 @@
     </div>
   </div>
 </section>
+
 <!-- 倒计时 -->
 <section class="countdown fade-in">
   <div class="container">
@@ -559,6 +563,7 @@
     </div>
   </div>
 </section>
+
 <!-- 婚礼信息 -->
 <section class="info fade-in">
   <div class="container">
@@ -592,7 +597,8 @@
     </div>
   </div>
 </section>
-<!-- 相册 -->
+
+<!-- 相册（已加懒加载） -->
 <section class="gallery fade-in">
   <div class="container">
     <div class="section-title">
@@ -602,32 +608,33 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item big">
-        <img src="photo1.jpg" alt="婚纱照1" />
+        <img src="photo1.jpg" alt="婚纱照1" loading="lazy" />
       </div>
       <div class="gallery-item">
-        <img src="photo2.jpg" alt="婚纱照2" />
+        <img src="photo2.jpg" alt="婚纱照2" loading="lazy" />
       </div>
       <div class="gallery-item">
-        <img src="photo3.jpg" alt="婚纱照3" />
+        <img src="photo3.jpg" alt="婚纱照3" loading="lazy" />
       </div>
       <div class="gallery-item">
-        <img src="photo4.jpg" alt="婚纱照4" />
+        <img src="photo4.jpg" alt="婚纱照4" loading="lazy" />
       </div>
       <div class="gallery-item">
-        <img src="photo5.jpg" alt="婚纱照5" />
+        <img src="photo5.jpg" alt="婚纱照5" loading="lazy" />
       </div>
       <div class="gallery-item">
-        <img src="photo6.jpg" alt="婚纱照6" />
+        <img src="photo6.jpg" alt="婚纱照6" loading="lazy" />
       </div>
       <div class="gallery-item">
-        <img src="photo7.jpg" alt="婚纱照7" />
+        <img src="photo7.jpg" alt="婚纱照7" loading="lazy" />
       </div>
       <div class="gallery-item">
-        <img src="photo8.jpg" alt="婚纱照8" />
+        <img src="photo8.jpg" alt="婚纱照8" loading="lazy" />
       </div>
     </div>
   </div>
 </section>
+
 <!-- RSVP & 留言 -->
 <section class="rsvp fade-in">
   <div class="container">
@@ -662,6 +669,7 @@
     </div>
   </div>
 </section>
+
 <!-- 温馨提示 -->
 <section class="tips fade-in">
   <div class="container">
@@ -679,6 +687,7 @@
     </ul>
   </div>
 </section>
+
 <!-- 结尾 -->
 <section class="end fade-in">
   <div class="container">
@@ -688,6 +697,7 @@
     <div class="end-sign">BEST WISHES</div>
   </div>
 </section>
+
 <script>
   // 倒计时
   const weddingDate = new Date('2026-11-29T11:55:00').getTime();
