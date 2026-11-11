@@ -198,9 +198,40 @@
     display: block;
     loading: lazy;
   }
+  /* 婚礼地点 */
+  .location {
+    background: var(--bg-soft);
+    text-align: center;
+  }
+  .location-box {
+    background: #fff;
+    padding:30px 24px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  }
+  .location-address{
+    color:var(--text-soft);
+    font-size:15px;
+    margin-bottom:24px;
+    line-height:1.6;
+  }
+  .nav-btn{
+    display:inline-block;
+    padding:12px 32px;
+    background:var(--gold);
+    color:#fff;
+    text-decoration:none;
+    border-radius:99px;
+    font-size:15px;
+    letter-spacing:1px;
+  }
+  .nav-btn:hover{
+    background:#a07b4a;
+  }
   /* 倒计时 */
   .countdown {
-    background: var(--bg-soft);
+    background: var(--bg);
     text-align: center;
   }
   .countdown-box {
@@ -238,13 +269,13 @@
     <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
   </svg>
   <audio id="bgMusic" loop preload="none">
-    <source src="./music.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
   
 </div>
 
 <!-- 封面 -->
 <section class="cover">
-  <img src="./images/cover.jpg" alt="婚礼封面">
+  <img src="cover.jpg" alt="婚礼封面">
   <div class="cover-mask"></div>
   <div class="cover-content">
     <div class="en-title">WEDDING</div>
@@ -272,7 +303,7 @@
   </div>
 </section>
 
-<!-- 相册 7张照片 photo1 ~ photo7 -->
+<!-- 相册 7张照片 -->
 <section class="album">
   <div class="container">
     <div class="section-title">
@@ -280,13 +311,32 @@
       <h2>我们的故事</h2>
       <div class="line"></div>
     </div>
-    <img class="album-img" src="./images/photo1.jpg" alt="照片">
-    <img class="album-img" src="./images/photo2.jpg" alt="照片">
-    <img class="album-img" src="./images/photo3.jpg" alt="照片">
-    <img class="album-img" src="./images/photo4.jpg" alt="照片">
-    <img class="album-img" src="./images/photo5.jpg" alt="照片">
-    <img class="album-img" src="./images/photo6.jpg" alt="照片">
-    <img class="album-img" src="./images/photo7.jpg" alt="照片">
+    <img class="album-img" src="photo1.jpg" alt="照片">
+    <img class="album-img" src="photo2.jpg" alt="照片">
+    <img class="album-img" src="photo3.jpg" alt="照片">
+    <img class="album-img" src="photo4.jpg" alt="照片">
+    <img class="album-img" src="photo5.jpg" alt="照片">
+    <img class="album-img" src="photo6.jpg" alt="照片">
+    <img class="album-img" src="photo7.jpg" alt="照片">
+  </div>
+</section>
+
+<!-- 婚礼地点+导航按钮（已填好地址与高德链接） -->
+<section class="location">
+  <div class="container">
+    <div class="section-title">
+      <div class="en">VENUE</div>
+      <h2>婚礼地点</h2>
+      <div class="line"></div>
+    </div>
+    <div class="location-box">
+      <div class="location-address">
+        润泽园囍宴中心（双丰商城6楼）
+      </div>
+      <a class="nav-btn" href="https://surl.amap.com/cEo5K6C124dv" target="_blank">
+        📍 一键导航
+      </a>
+    </div>
   </div>
 </section>
 
@@ -333,9 +383,8 @@ musicBtn.addEventListener('click', ()=>{
   }
 });
 
-// ========== 倒计时 ==========
-// 修改这里为你的婚礼时间：年,月-1,日,时,分,秒
-const weddingTime = new Date(2026, 11, 29, 11, 55, 0).getTime();
+// ========== 倒计时 婚礼时间：2026‑10‑29 11:55 ==========
+const weddingTime = new Date(2026, 9, 29, 11, 55, 0).getTime();
 function updateCountdown(){
   const now = Date.now();
   const diff = weddingTime - now;
