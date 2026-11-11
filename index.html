@@ -33,26 +33,13 @@
     font-weight: 500;
     color: var(--text);
   }
-  /* 花瓣/星光容器 */
-  #particles {
+  /* 花瓣画布 */
+  #petalCanvas {
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 1;
     overflow: hidden;
-  }
-  .particle {
-    position: absolute;
-    top: -10px;
-    color: var(--gold-light);
-    opacity: 0.55;
-    animation: fall linear infinite;
-    user-select: none;
-  }
-  @keyframes fall {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.6; }
-    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
   }
   /* 音乐按钮 */
   .music-btn {
@@ -109,6 +96,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    loading: lazy;
   }
   .cover-mask {
     position: absolute;
@@ -199,9 +187,20 @@
     font-size: 16px;
     letter-spacing: 2px;
   }
+  /* 相册区域（7张照片） */
+  .album {
+    background: var(--bg);
+  }
+  .album-img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    display: block;
+    loading: lazy;
+  }
   /* 倒计时 */
   .countdown {
-    background: var(--bg);
+    background: var(--bg-soft);
     text-align: center;
   }
   .countdown-box {
@@ -227,597 +226,213 @@
     font-size: 12px;
     color: var(--text-soft);
     margin-top: 4px;
-    letter-spacing: 2px;
-  }
-  /* 婚礼信息 */
-  .info {
-    background: var(--bg-soft);
-  }
-  .info-card {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 12px 34px rgba(0,0,0,0.05);
-  }
-  .info-block {
-    padding: 26px 24px;
-    border-bottom: 1px dashed var(--line);
-  }
-  .info-block:last-child {
-    border-bottom: none;
-  }
-  .info-block .icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #f3ecde;
-    color: var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px;
-  }
-  .info-block h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  .info-block p {
-    font-size: 14px;
-    color: var(--text-soft);
-    margin-bottom: 8px;
-  }
-  .info-block .highlight {
-    color: var(--gold);
-    font-weight: 500;
-  }
-  .btn {
-    display: inline-block;
-    margin-top: 14px;
-    padding: 10px 22px;
-    background: var(--gold);
-    color: #fff;
-    border-radius: 999px;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-  .btn:hover {
-    background: #a47f47;
-  }
-  /* 相册 */
-  .gallery {
-    background: var(--bg);
-  }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 24px;
-  }
-  .gallery-item {
-    border-radius: 14px;
-    overflow: hidden;
-    aspect-ratio: 3 / 4;
-    background: #eee;
-  }
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .gallery-item.big {
-    grid-column: span 2;
-    aspect-ratio: 16 / 10;
-  }
-  /* RSVP & 留言 */
-  .rsvp {
-    background: var(--bg-soft);
-  }
-  .form-box {
-    background: #fff;
-    padding: 30px 24px;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    box-shadow: 0 12px 34px rgba(0,0,0,0.05);
-  }
-  .form-box h3 {
-    margin-bottom: 18px;
-    font-size: 20px;
-  }
-  input, textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    font-size: 14px;
-    background: #fdfbf6;
-    color: var(--text);
-    font-family: inherit;
-    outline: none;
-    box-sizing: border-box;
-    margin-bottom: 14px;
-  }
-  input:focus, textarea:focus {
-    border-color: var(--gold);
-  }
-  textarea {
-    min-height: 90px;
-    resize: vertical;
-  }
-  .radio-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 14px;
-  }
-  .radio-group label {
-    flex: 1;
-    padding: 12px;
-    text-align: center;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    font-size: 14px;
-    cursor: pointer;
-    background: #fdfbf6;
-  }
-  .radio-group input {
-    display: none;
-  }
-  .radio-group input:checked + span {
-    color: var(--gold);
-    font-weight: 600;
-  }
-  .submit-btn {
-    width: 100%;
-    padding: 14px;
-    background: var(--gold);
-    color: #fff;
-    border: none;
-    border-radius: 999px;
-    font-size: 15px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  .submit-btn:hover {
-    background: #a47f47;
-  }
-  .messages {
-    margin-top: 30px;
-  }
-  .message-item {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 16px 18px;
-    margin-bottom: 12px;
-  }
-  .message-item .name {
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 6px;
-    font-size: 14px;
-  }
-  .message-item .text {
-    font-size: 14px;
-    color: var(--text-soft);
-  }
-  /* 温馨提示 */
-  .tips {
-    background: var(--bg);
-  }
-  .tips-list {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 26px 24px;
-    box-shadow: 0 12px 34px rgba(0,0,0,0.05);
-  }
-  .tips-list li {
-    list-style: none;
-    padding: 12px 0;
-    border-bottom: 1px dashed var(--line);
-    font-size: 14px;
-    color: var(--text-soft);
-    padding-left: 30px;
-    position: relative;
-  }
-  .tips-list li:last-child {
-    border-bottom: none;
-  }
-  .tips-list li::before {
-    content: "◆";
-    position: absolute;
-    left: 0;
-    top: 16px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #f3ecde;
-    color: var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-  }
-  /* 结尾 */
-  .end {
-    background: var(--bg-soft);
-    text-align: center;
-    padding-bottom: 70px;
-  }
-  .end h2 {
-    font-size: 26px;
-    margin-bottom: 14px;
-  }
-  .end p {
-    color: var(--text-soft);
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .end-sign {
-    font-family: "Playfair Display", serif;
-    color: var(--gold);
-    margin-top: 24px;
-    letter-spacing: 2px;
-  }
-  /* 淡入动画 */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  .fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  /* 响应式 */
-  @media (max-width: 375px) {
-    .cover-content h1 {
-      font-size: 30px;
-    }
-    .countdown-item {
-      min-width: 62px;
-      padding: 14px 8px;
-    }
-    .countdown-item .num {
-      font-size: 24px;
-    }
   }
 </style>
 </head>
 <body>
-<!-- 花瓣/星光动效 -->
-<div id="particles"></div>
+<canvas id="petalCanvas"></canvas>
 
-<!-- 背景音乐（已修复闭合标签） -->
-<audio id="bgMusic" loop preload="auto">
-  <source src="music.mp3" type="audio/mpeg" />
-
-
-<!-- 音乐控制按钮 -->
-<div class="music-btn" id="musicBtn" title="点击播放/暂停">
+<!-- 音乐按钮 -->
+<div class="music-btn" id="musicBtn">
   <svg class="disc" viewBox="0 0 24 24">
     <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
   </svg>
+  <audio id="bgMusic" loop preload="none">
+    <source src="./music.mp3" type="audio/mpeg">
+  
 </div>
 
 <!-- 封面 -->
 <section class="cover">
-  <img src="cover.jpg" alt="婚礼封面" />
+  <img src="./images/cover.jpg" alt="婚礼封面">
   <div class="cover-mask"></div>
   <div class="cover-content">
-    <div class="en-title">WEDDING INVITATION</div>
-    <h1>潘兵兵 &amp; 贾金婷</h1>
+    <div class="en-title">WEDDING</div>
+    <h1>潘兵兵 & 贾金婷</h1>
     <div class="cover-line"></div>
-    <div class="date">2026年11月29日 · 星期日</div>
-    <div class="date" style="margin-top:6px;font-size:14px;opacity:0.85;">丙午马年十月初三 · 中午 11:55</div>
+    <div class="date">诚邀您来见证我们的幸福</div>
   </div>
 </section>
 
-<!-- 邀请正文 -->
-<section class="invitation fade-in">
+<!-- 邀请函文字 -->
+<section class="invitation">
   <div class="container">
     <div class="section-title">
-      <div class="en">OUR INVITATION</div>
-      <h2>致最珍贵的你</h2>
+      <div class="en">INVITATION</div>
+      <h2>邀请函</h2>
       <div class="line"></div>
     </div>
     <div class="invitation-text">
-      <p>亲爱的家人、朋友：</p>
-      <p>我们走过相遇与陪伴，终于迎来这一天。</p>
-      <p>愿以这场小小的婚礼，邀请最重要的你，<br>见证我们的幸福，也分享这份喜悦。</p>
-      <p>盼您拨冗出席，与我们共同开启人生新的篇章。</p>
-      <div class="signature">潘兵兵 &amp; 贾金婷</div>
+      <p>良辰已定，吉日待访</p>
+      <p>吾有薄酒，以谢良友</p>
+      <p>敬备喜筵，随候尊驾</p>
+      <p>诚邀您见证我们的幸福时刻</p>
+      <p class="signature">—— 潘兵兵 & 贾金婷</p>
     </div>
+  </div>
+</section>
+
+<!-- 相册 7张照片 photo1 ~ photo7 -->
+<section class="album">
+  <div class="container">
+    <div class="section-title">
+      <div class="en">MEMORIES</div>
+      <h2>我们的故事</h2>
+      <div class="line"></div>
+    </div>
+    <img class="album-img" src="./images/photo1.jpg" alt="照片">
+    <img class="album-img" src="./images/photo2.jpg" alt="照片">
+    <img class="album-img" src="./images/photo3.jpg" alt="照片">
+    <img class="album-img" src="./images/photo4.jpg" alt="照片">
+    <img class="album-img" src="./images/photo5.jpg" alt="照片">
+    <img class="album-img" src="./images/photo6.jpg" alt="照片">
+    <img class="album-img" src="./images/photo7.jpg" alt="照片">
   </div>
 </section>
 
 <!-- 倒计时 -->
-<section class="countdown fade-in">
+<section class="countdown">
   <div class="container">
     <div class="section-title">
-      <div class="en">COUNTDOWN</div>
-      <h2>幸福倒计时</h2>
+      <div class="en">TIME</div>
+      <h2>婚礼倒计时</h2>
       <div class="line"></div>
     </div>
     <div class="countdown-box">
       <div class="countdown-item">
-        <div class="num" id="days">00</div>
-        <div class="label">DAYS</div>
+        <div class="num" id="day">00</div>
+        <div class="label">天</div>
       </div>
       <div class="countdown-item">
-        <div class="num" id="hours">00</div>
-        <div class="label">HOURS</div>
+        <div class="num" id="hour">00</div>
+        <div class="label">时</div>
       </div>
       <div class="countdown-item">
-        <div class="num" id="minutes">00</div>
-        <div class="label">MINUTES</div>
+        <div class="num" id="min">00</div>
+        <div class="label">分</div>
       </div>
       <div class="countdown-item">
-        <div class="num" id="seconds">00</div>
-        <div class="label">SECONDS</div>
+        <div class="num" id="sec">00</div>
+        <div class="label">秒</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- 婚礼信息 -->
-<section class="info fade-in">
-  <div class="container">
-    <div class="section-title">
-      <div class="en">WEDDING INFORMATION</div>
-      <h2>婚礼信息</h2>
-      <div class="line"></div>
-    </div>
-    <div class="info-card">
-      <div class="info-block">
-        <div class="icon">🕐</div>
-        <h3>仪式时间</h3>
-        <p>公历：<span class="highlight">2026年11月29日</span></p>
-        <p>农历：丙午马年十月初三</p>
-        <p>星期：星期日</p>
-        <p>仪式开始：<span class="highlight">中午 11:55</span></p>
-      </div>
-      <div class="info-block">
-        <div class="icon">📍</div>
-        <h3>婚礼地点</h3>
-        <p><span class="highlight">润泽园囍宴中心</span></p>
-        <p>地址：双丰商城六楼</p>
-        <a class="btn" href="https://surl.amap.com/cEo5K6C124dv" target="_blank" rel="noopener">一键导航</a>
-      </div>
-      <div class="info-block">
-        <div class="icon">📞</div>
-        <h3>联系新人</h3>
-        <p>如有疑问，可联系新人确认行程与席位。</p>
-        <p>电话：<span class="highlight">18550627247</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 相册（已加懒加载） -->
-<section class="gallery fade-in">
-  <div class="container">
-    <div class="section-title">
-      <div class="en">OUR MOMENTS</div>
-      <h2>我们的照片</h2>
-      <div class="line"></div>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item big">
-        <img src="photo1.jpg" alt="婚纱照1" />
-      </div>
-      <div class="gallery-item">
-        <img src="photo2.jpg" alt="婚纱照2" />
-      </div>
-      <div class="gallery-item">
-        <img src="photo3.jpg" alt="婚纱照3" />
-      </div>
-      <div class="gallery-item">
-        <img src="photo4.jpg" alt="婚纱照4"/>
-      </div>
-      <div class="gallery-item">
-        <img src="photo5.jpg" alt="婚纱照5" />
-      </div>
-      <div class="gallery-item">
-        <img src="photo6.jpg" alt="婚纱照6"/>
-      </div>
-      <div class="gallery-item">
-        <img src="photo7.jpg" alt="婚纱照7"/>
-      </div>
-      <div class="gallery-item">
-        <img src="photo8.jpg" alt="婚纱照8"/>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RSVP & 留言 -->
-<section class="rsvp fade-in">
-  <div class="container">
-    <div class="section-title">
-      <div class="en">RSVP &amp; WISHES</div>
-      <h2>出席与祝福</h2>
-      <div class="line"></div>
-    </div>
-    <div class="form-box">
-      <h3>请您告知是否出席</h3>
-      <label style="font-size:14px;color:var(--text-soft);">您的姓名</label>
-      <input type="text" id="guestName" placeholder="请输入姓名" />
-      <label style="font-size:14px;color:var(--text-soft);">联系方式</label>
-      <input type="tel" id="guestPhone" placeholder="请输入手机号码" />
-      <label style="font-size:14px;color:var(--text-soft);margin-bottom:10px;display:block;">是否出席</label>
-      <div class="radio-group">
-        <label>
-          <input type="radio" name="attend" value="出席" checked />
-          <span>出席</span>
-        </label>
-        <label>
-          <input type="radio" name="attend" value="无法出席" />
-          <span>无法出席</span>
-        </label>
-      </div>
-      <label style="font-size:14px;color:var(--text-soft);">出席人数</label>
-      <input type="number" id="guestNumber" min="1" value="1" />
-      <label style="font-size:14px;color:var(--text-soft);">送上祝福</label>
-      <textarea id="guestMessage" placeholder="写下您的祝福……"></textarea>
-      <button class="submit-btn" id="submitBtn">送出祝福</button>
-      <div class="messages" id="messages"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 温馨提示 -->
-<section class="tips fade-in">
-  <div class="container">
-    <div class="section-title">
-      <div class="en">WARM TIPS</div>
-      <h2>温馨提示</h2>
-      <div class="line"></div>
-    </div>
-    <ul class="tips-list">
-      <li>仪式将于中午 11:55 开始，请您提前到场。</li>
-      <li>可联系新人确认席位与行程安排。</li>
-      <li>现场提供停车与用餐服务，出行请注意安全。</li>
-      <li>请着正式或优雅服装出席，共同营造温馨仪式感。</li>
-      <li>期待与您相聚，共同度过这温暖而重要的一天。</li>
-    </ul>
-  </div>
-</section>
-
-<!-- 结尾 -->
-<section class="end fade-in">
-  <div class="container">
-    <h2>感谢生命中有你</h2>
-    <p>愿这一天，成为我们共同珍藏的美好回忆。</p>
-    <p>潘兵兵 &amp; 贾金婷，敬邀。</p>
-    <div class="end-sign">BEST WISHES</div>
   </div>
 </section>
 
 <script>
-  // 倒计时
-  const weddingDate = new Date('2026-11-29T11:55:00').getTime();
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
-    if (distance < 0) {
-      document.getElementById('days').innerText = '00';
-      document.getElementById('hours').innerText = '00';
-      document.getElementById('minutes').innerText = '00';
-      document.getElementById('seconds').innerText = '00';
-      return;
-    }
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    document.getElementById('days').innerText = String(days).padStart(2, '0');
-    document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-    document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+// 音乐控制
+const musicBtn = document.getElementById('musicBtn');
+const bgMusic = document.getElementById('bgMusic');
+musicBtn.addEventListener('click', ()=>{
+  if(bgMusic.paused){
+    bgMusic.play();
+    musicBtn.classList.add('playing');
+  }else{
+    bgMusic.pause();
+    musicBtn.classList.remove('playing');
   }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+});
 
-  // 背景音乐：微信/ios稳定版，仅右上角按钮控制
-  const bgMusic = document.getElementById('bgMusic');
-  const musicBtn = document.getElementById('musicBtn');
-  let isPlaying = false;
-  musicBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    if (isPlaying) {
-      bgMusic.pause();
-      isPlaying = false;
-      musicBtn.classList.remove('playing');
-    } else {
-      bgMusic.play()
-        .then(() => {
-          isPlaying = true;
-          musicBtn.classList.add('playing');
-        })
-        .catch(err => {
-          console.log('播放失败：', err);
-          alert('如果没有声音，请检查手机媒体音量、静音开关');
-        });
-    }
+// ========== 倒计时 ==========
+// 修改这里为你的婚礼时间：年,月-1,日,时,分,秒
+const weddingTime = new Date(2026, 11, 29, 11, 55, 0).getTime();
+function updateCountdown(){
+  const now = Date.now();
+  const diff = weddingTime - now;
+  if(diff <= 0){
+    document.getElementById('day').innerText = '00';
+    document.getElementById('hour').innerText = '00';
+    document.getElementById('min').innerText = '00';
+    document.getElementById('sec').innerText = '00';
+    return;
+  }
+  const day = Math.floor(diff / (1000*60*60*24));
+  const hour = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const min = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const sec = Math.floor((diff % (1000*60)) / 1000);
+  document.getElementById('day').innerText = String(day).padStart(2,'0');
+  document.getElementById('hour').innerText = String(hour).padStart(2,'0');
+  document.getElementById('min').innerText = String(min).padStart(2,'0');
+  document.getElementById('sec').innerText = String(sec).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ========== 花瓣动画（优化版） ==========
+window.addEventListener('DOMContentLoaded', ()=>{
+  const canvas = document.getElementById('petalCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  const petalList = [];
+  const MAX_PETAL = 28;
+  const petalColor = '#d4b886';
+
+  let resizeTimer = null;
+  function resize(){
+    w = canvas.width = innerWidth;
+    h = canvas.height = innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', ()=>{
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize,120);
   });
 
-  // 花瓣/星光动效
-  const particlesContainer = document.getElementById('particles');
-  const symbols = ['✦', '❋', '✿', '·'];
-  function createParticle() {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    particle.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-    particle.style.left = Math.random() * 100 + 'vw';
-    particle.style.fontSize = (Math.random() * 10 + 8) + 'px';
-    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-    particle.style.opacity = Math.random() * 0.4 + 0.25;
-    particlesContainer.appendChild(particle);
-    setTimeout(() => {
-      particle.remove();
-    }, 20000);
-  }
-  setInterval(createParticle, 450);
-
-  // 页面淡入
-  const fadeElements = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.12 });
-  fadeElements.forEach(el => observer.observe(el));
-
-  // RSVP 留言（本地localStorage）
-  const messagesBox = document.getElementById('messages');
-  function loadMessages() {
-    const data = localStorage.getItem('weddingMessages');
-    return data ? JSON.parse(data) : [];
-  }
-  function saveMessage(msg) {
-    const messages = loadMessages();
-    messages.unshift(msg);
-    localStorage.setItem('weddingMessages', JSON.stringify(messages));
-  }
-  function renderMessages() {
-    const messages = loadMessages();
-    messagesBox.innerHTML = '';
-    messages.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'message-item';
-      div.innerHTML = `
-        <div class="name">${item.name} · ${item.attend} · ${item.number}人</div>
-        <div class="text">${item.message || '未留言'}</div>
-      `;
-      messagesBox.appendChild(div);
-    });
-  }
-  document.getElementById('submitBtn').addEventListener('click', () => {
-    const name = document.getElementById('guestName').value.trim();
-    const phone = document.getElementById('guestPhone').value.trim();
-    const attend = document.querySelector('input[name="attend"]:checked').value;
-    const number = document.getElementById('guestNumber').value || 1;
-    const message = document.getElementById('guestMessage').value.trim();
-    if (!name) {
-      alert('请填写您的姓名');
-      return;
+  class Petal{
+    constructor(){
+      this.reset();
     }
-    saveMessage({ name, phone, attend, number, message });
-    renderMessages();
-    document.getElementById('guestName').value = '';
-    document.getElementById('guestPhone').value = '';
-    document.getElementById('guestNumber').value = 1;
-    document.getElementById('guestMessage').value = '';
-    alert('感谢您的祝福！');
-  });
-  renderMessages();
+    reset(){
+      this.x = Math.random() * w;
+      this.y = Math.random() * -h;
+      this.size = Math.random() * 6 + 3;
+      this.speedY = Math.random() * 0.6 + 0.25;
+      this.speedX = (Math.random()-0.5)*0.4;
+      this.rot = Math.random()*Math.PI*2;
+      this.rotSpeed = (Math.random()-0.5)*0.022;
+      this.opacity = Math.random()*0.35 + 0.35;
+    }
+    update(){
+      this.y += this.speedY;
+      this.x += this.speedX;
+      this.rot += this.rotSpeed;
+      if(this.y > h + 12) this.reset();
+    }
+    draw(){
+      ctx.save();
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rot);
+      ctx.fillStyle = petalColor;
+      ctx.globalAlpha = this.opacity;
+      ctx.beginPath();
+      ctx.moveTo(0, -this.size);
+      ctx.bezierCurveTo(
+        this.size*0.55, -this.size*0.35,
+        this.size*0.55, this.size*0.35,
+        0, this.size
+      );
+      ctx.bezierCurveTo(
+        -this.size*0.55, this.size*0.35,
+        -this.size*0.55, -this.size*0.35,
+        0, -this.size
+      );
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  for(let i=0;i<MAX_PETAL;i++) petalList.push(new Petal());
+
+  function render(){
+    ctx.clearRect(0,0,w,h);
+    for(let p of petalList){
+      p.update();
+      p.draw();
+    }
+    requestAnimationFrame(render);
+  }
+  render();
+})
 </script>
 </body>
 </html>
