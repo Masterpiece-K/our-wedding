@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>潘兵兵 & 贾金婷 婚礼邀请</title>
 <meta name="description" content="潘兵兵与贾金婷的婚礼邀请函，诚邀您见证我们的幸福时刻。" />
-
 <style>
   * {
     margin: 0;
@@ -13,7 +12,6 @@
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
   }
-
   :root {
     --bg: #f7f4ee;
     --bg-soft: #fbf9f4;
@@ -23,7 +21,6 @@
     --gold-light: #d4b886;
     --line: #e6dfd2;
   }
-
   html, body {
     font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
     background: var(--bg);
@@ -31,13 +28,11 @@
     line-height: 1.7;
     overflow-x: hidden;
   }
-
   h1, h2, h3 {
     font-family: "Playfair Display", "Times New Roman", "Noto Serif SC", serif;
     font-weight: 500;
     color: var(--text);
   }
-
   /* 花瓣/星光容器 */
   #particles {
     position: fixed;
@@ -46,7 +41,6 @@
     z-index: 1;
     overflow: hidden;
   }
-
   .particle {
     position: absolute;
     top: -10px;
@@ -55,13 +49,11 @@
     animation: fall linear infinite;
     user-select: none;
   }
-
   @keyframes fall {
     0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
     10% { opacity: 0.6; }
     100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
   }
-
   /* 音乐按钮 */
   .music-btn {
     position: fixed;
@@ -79,34 +71,28 @@
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   }
-
   .music-btn svg {
     width: 20px;
     height: 20px;
     fill: var(--gold);
   }
-
   .music-btn.playing .disc {
     animation: rotate 6s linear infinite;
   }
-
   @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
-
   /* 通用区块 */
   section {
     position: relative;
     z-index: 2;
     padding: 50px 22px;
   }
-
   .container {
     max-width: 480px;
     margin: 0 auto;
   }
-
   /* 封面 */
   .cover {
     position: relative;
@@ -117,7 +103,6 @@
     justify-content: center;
     overflow: hidden;
   }
-
   .cover img {
     position: absolute;
     inset: 0;
@@ -125,7 +110,6 @@
     height: 100%;
     object-fit: cover;
   }
-
   .cover-mask {
     position: absolute;
     inset: 0;
@@ -136,7 +120,6 @@
       rgba(30, 24, 16, 0.08) 100%
     );
   }
-
   .cover-content {
     position: relative;
     z-index: 3;
@@ -145,64 +128,54 @@
     padding: 0 24px 70px;
     width: 100%;
   }
-
   .cover-content .en-title {
     font-size: 13px;
     letter-spacing: 6px;
     opacity: 0.85;
     margin-bottom: 14px;
   }
-
   .cover-content h1 {
     font-size: 34px;
     color: #fff;
     margin-bottom: 10px;
     letter-spacing: 2px;
   }
-
   .cover-content .date {
     font-size: 15px;
     letter-spacing: 3px;
     opacity: 0.9;
     margin-top: 18px;
   }
-
   .cover-line {
     width: 40px;
     height: 1px;
     background: var(--gold-light);
     margin: 16px auto;
   }
-
   /* 邀请正文 */
   .invitation {
     background: var(--bg-soft);
   }
-
   .section-title {
     text-align: center;
     margin-bottom: 30px;
   }
-
   .section-title .en {
     font-size: 12px;
     color: var(--gold);
     letter-spacing: 4px;
     margin-bottom: 8px;
   }
-
   .section-title h2 {
     font-size: 24px;
     color: var(--text);
   }
-
   .section-title .line {
     width: 36px;
     height: 1px;
     background: var(--gold);
     margin: 14px auto 0;
   }
-
   .invitation-text {
     background: #fff;
     padding: 30px 24px;
@@ -210,18 +183,15 @@
     border-radius: 14px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
   }
-
   .invitation-text p {
     font-size: 15px;
     color: var(--text-soft);
     margin-bottom: 16px;
     text-align: center;
   }
-
   .invitation-text p:last-child {
     margin-bottom: 0;
   }
-
   .signature {
     margin-top: 24px;
     font-family: "Playfair Display", "Times New Roman", serif;
@@ -229,20 +199,17 @@
     font-size: 16px;
     letter-spacing: 2px;
   }
-
   /* 倒计时 */
   .countdown {
     background: var(--bg);
     text-align: center;
   }
-
   .countdown-box {
     display: flex;
     justify-content: center;
     gap: 12px;
     margin-top: 24px;
   }
-
   .countdown-item {
     min-width: 70px;
     padding: 18px 10px;
@@ -251,25 +218,21 @@
     border-radius: 14px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.04);
   }
-
   .countdown-item .num {
     font-family: "Playfair Display", serif;
     font-size: 28px;
     color: var(--gold);
   }
-
   .countdown-item .label {
     font-size: 12px;
     color: var(--text-soft);
     margin-top: 4px;
     letter-spacing: 2px;
   }
-
   /* 婚礼信息 */
   .info {
     background: var(--bg-soft);
   }
-
   .info-card {
     background: #fff;
     border: 1px solid var(--line);
@@ -277,16 +240,13 @@
     overflow: hidden;
     box-shadow: 0 12px 34px rgba(0,0,0,0.05);
   }
-
   .info-block {
     padding: 26px 24px;
     border-bottom: 1px dashed var(--line);
   }
-
   .info-block:last-child {
     border-bottom: none;
   }
-
   .info-block .icon {
     width: 40px;
     height: 40px;
@@ -298,23 +258,19 @@
     justify-content: center;
     margin-bottom: 14px;
   }
-
   .info-block h3 {
     font-size: 18px;
     margin-bottom: 10px;
   }
-
   .info-block p {
     font-size: 14px;
     color: var(--text-soft);
     margin-bottom: 8px;
   }
-
   .info-block .highlight {
     color: var(--gold);
     font-weight: 500;
   }
-
   .btn {
     display: inline-block;
     margin-top: 14px;
@@ -327,47 +283,39 @@
     text-decoration: none;
     transition: background 0.3s;
   }
-
   .btn:hover {
     background: #a47f47;
   }
-
   /* 相册 */
   .gallery {
     background: var(--bg);
   }
-
   .gallery-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     margin-top: 24px;
   }
-
   .gallery-item {
     border-radius: 14px;
     overflow: hidden;
     aspect-ratio: 3 / 4;
     background: #eee;
   }
-
   .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-
   .gallery-item.big {
     grid-column: span 2;
     aspect-ratio: 16 / 10;
   }
-
   /* RSVP & 留言 */
   .rsvp {
     background: var(--bg-soft);
   }
-
   .form-box {
     background: #fff;
     padding: 30px 24px;
@@ -375,12 +323,10 @@
     border-radius: 16px;
     box-shadow: 0 12px 34px rgba(0,0,0,0.05);
   }
-
   .form-box h3 {
     margin-bottom: 18px;
     font-size: 20px;
   }
-
   input, textarea {
     width: 100%;
     padding: 12px 14px;
@@ -394,22 +340,18 @@
     box-sizing: border-box;
     margin-bottom: 14px;
   }
-
   input:focus, textarea:focus {
     border-color: var(--gold);
   }
-
   textarea {
     min-height: 90px;
     resize: vertical;
   }
-
   .radio-group {
     display: flex;
     gap: 10px;
     margin-bottom: 14px;
   }
-
   .radio-group label {
     flex: 1;
     padding: 12px;
@@ -420,16 +362,13 @@
     cursor: pointer;
     background: #fdfbf6;
   }
-
   .radio-group input {
     display: none;
   }
-
   .radio-group input:checked + span {
     color: var(--gold);
     font-weight: 600;
   }
-
   .submit-btn {
     width: 100%;
     padding: 14px;
@@ -442,15 +381,12 @@
     cursor: pointer;
     transition: background 0.3s;
   }
-
   .submit-btn:hover {
     background: #a47f47;
   }
-
   .messages {
     margin-top: 30px;
   }
-
   .message-item {
     background: #fff;
     border: 1px solid var(--line);
@@ -458,24 +394,20 @@
     padding: 16px 18px;
     margin-bottom: 12px;
   }
-
   .message-item .name {
     font-weight: 600;
     color: var(--gold);
     margin-bottom: 6px;
     font-size: 14px;
   }
-
   .message-item .text {
     font-size: 14px;
     color: var(--text-soft);
   }
-
   /* 温馨提示 */
   .tips {
     background: var(--bg);
   }
-
   .tips-list {
     background: #fff;
     border: 1px solid var(--line);
@@ -483,7 +415,6 @@
     padding: 26px 24px;
     box-shadow: 0 12px 34px rgba(0,0,0,0.05);
   }
-
   .tips-list li {
     list-style: none;
     padding: 12px 0;
@@ -493,13 +424,11 @@
     padding-left: 30px;
     position: relative;
   }
-
   .tips-list li:last-child {
     border-bottom: none;
   }
-
   .tips-list li::before {
-    content: "";
+    content: "◆";
     position: absolute;
     left: 0;
     top: 16px;
@@ -512,73 +441,59 @@
     align-items: center;
     justify-content: center;
     font-size: 11px;
-    content: "◆";
   }
-
   /* 结尾 */
   .end {
     background: var(--bg-soft);
     text-align: center;
     padding-bottom: 70px;
   }
-
   .end h2 {
     font-size: 26px;
     margin-bottom: 14px;
   }
-
   .end p {
     color: var(--text-soft);
     font-size: 14px;
     margin-bottom: 10px;
   }
-
   .end-sign {
     font-family: "Playfair Display", serif;
     color: var(--gold);
     margin-top: 24px;
     letter-spacing: 2px;
   }
-
   /* 淡入动画 */
   .fade-in {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s ease, transform 1s ease;
   }
-
   .fade-in.show {
     opacity: 1;
     transform: translateY(0);
   }
-
   /* 响应式 */
   @media (max-width: 375px) {
     .cover-content h1 {
       font-size: 30px;
     }
-
     .countdown-item {
       min-width: 62px;
       padding: 14px 8px;
     }
-
     .countdown-item .num {
       font-size: 24px;
     }
   }
 </style>
 </head>
-
 <body>
-
 <!-- 花瓣/星光动效 -->
 <div id="particles"></div>
-
 <!-- 背景音乐 -->
 <audio id="bgMusic" loop preload="auto">
   <source src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/music.mp3" type="audio/mpeg" />
-</audio>
 
 <!-- 音乐控制按钮 -->
 <div class="music-btn" id="musicBtn" title="点击播放/暂停">
@@ -586,7 +501,6 @@
     <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
   </svg>
 </div>
-
 <!-- 封面 -->
 <section class="cover">
   <img src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/cover.jpg" alt="婚礼封面" />
@@ -599,7 +513,6 @@
     <div class="date" style="margin-top:6px;font-size:14px;opacity:0.85;">丙午马年十月初三 · 中午 11:55</div>
   </div>
 </section>
-
 <!-- 邀请正文 -->
 <section class="invitation fade-in">
   <div class="container">
@@ -608,7 +521,6 @@
       <h2>致最珍贵的你</h2>
       <div class="line"></div>
     </div>
-
     <div class="invitation-text">
       <p>亲爱的家人、朋友：</p>
       <p>我们走过相遇与陪伴，终于迎来这一天。</p>
@@ -618,7 +530,6 @@
     </div>
   </div>
 </section>
-
 <!-- 倒计时 -->
 <section class="countdown fade-in">
   <div class="container">
@@ -627,7 +538,6 @@
       <h2>幸福倒计时</h2>
       <div class="line"></div>
     </div>
-
     <div class="countdown-box">
       <div class="countdown-item">
         <div class="num" id="days">00</div>
@@ -648,7 +558,6 @@
     </div>
   </div>
 </section>
-
 <!-- 婚礼信息 -->
 <section class="info fade-in">
   <div class="container">
@@ -657,7 +566,6 @@
       <h2>婚礼信息</h2>
       <div class="line"></div>
     </div>
-
     <div class="info-card">
       <div class="info-block">
         <div class="icon">🕐</div>
@@ -667,7 +575,6 @@
         <p>星期：星期日</p>
         <p>仪式开始：<span class="highlight">中午 11:55</span></p>
       </div>
-
       <div class="info-block">
         <div class="icon">📍</div>
         <h3>婚礼地点</h3>
@@ -675,7 +582,6 @@
         <p>地址：双丰商城六楼</p>
         <a class="btn" href="https://surl.amap.com/cEo5K6C124dv" target="_blank" rel="noopener">一键导航</a>
       </div>
-
       <div class="info-block">
         <div class="icon">📞</div>
         <h3>联系新人</h3>
@@ -685,42 +591,39 @@
     </div>
   </div>
 </section>
-
 <!-- 相册 -->
 <section class="gallery fade-in">
   <div class="container">
     <div class="section-title">
       <div class="en">OUR MOMENTS</div>
-      <h2>Wedding Photos</h2>
+      <h2>我们的照片</h2>
       <div class="line"></div>
     </div>
-
     <div class="gallery-grid">
       <div class="gallery-item big">
-        <img src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo1.jpg" loading="lazy" alt="婚纱照2" />
+        <img src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo1.jpg" loading="lazy" alt="婚纱照1" />
       </div>
       <div class="gallery-item">
-        <img https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo2.jpg alt="婚纱照3" />
+        <img src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo2.jpg" loading="lazy" alt="婚纱照2" />
       </div>
       <div class="gallery-item">
-        <img https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo3.jpg alt="婚纱照4" />
+        <img src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo3.jpg" loading="lazy" alt="婚纱照3" />
       </div>
       <div class="gallery-item">
-        <img https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo4.jpg alt="婚纱照5" />
+        <img src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo4.jpg" loading="lazy" alt="婚纱照4" />
       </div>
       <div class="gallery-item">
-        <img https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo5.jpg alt="婚纱照6" />
+        <img src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo5.jpg" loading="lazy" alt="婚纱照5" />
       </div>
       <div class="gallery-item">
-        <img https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo6.jpg alt="婚纱照7" />
+        <img src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo6.jpg" loading="lazy" alt="婚纱照6" />
       </div>
       <div class="gallery-item">
-        <img https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo8.jpg alt="婚纱照8" />
+        <img src="https://cdn.jsdelivr.net/gh/Masterpiece-K/Our-wedding/photo8.jpg" loading="lazy" alt="婚纱照7" />
       </div>
     </div>
   </div>
 </section>
-
 <!-- RSVP & 留言 -->
 <section class="rsvp fade-in">
   <div class="container">
@@ -729,16 +632,12 @@
       <h2>出席与祝福</h2>
       <div class="line"></div>
     </div>
-
     <div class="form-box">
       <h3>请您告知是否出席</h3>
-
       <label style="font-size:14px;color:var(--text-soft);">您的姓名</label>
       <input type="text" id="guestName" placeholder="请输入姓名" />
-
       <label style="font-size:14px;color:var(--text-soft);">联系方式</label>
       <input type="tel" id="guestPhone" placeholder="请输入手机号码" />
-
       <label style="font-size:14px;color:var(--text-soft);margin-bottom:10px;display:block;">是否出席</label>
       <div class="radio-group">
         <label>
@@ -750,20 +649,15 @@
           <span>无法出席</span>
         </label>
       </div>
-
       <label style="font-size:14px;color:var(--text-soft);">出席人数</label>
       <input type="number" id="guestNumber" min="1" value="1" />
-
       <label style="font-size:14px;color:var(--text-soft);">送上祝福</label>
       <textarea id="guestMessage" placeholder="写下您的祝福……"></textarea>
-
       <button class="submit-btn" id="submitBtn">送出祝福</button>
-
       <div class="messages" id="messages"></div>
     </div>
   </div>
 </section>
-
 <!-- 温馨提示 -->
 <section class="tips fade-in">
   <div class="container">
@@ -772,7 +666,6 @@
       <h2>温馨提示</h2>
       <div class="line"></div>
     </div>
-
     <ul class="tips-list">
       <li>仪式将于中午 11:55 开始，请您提前到场。</li>
       <li>可联系新人确认席位与行程安排。</li>
@@ -782,7 +675,6 @@
     </ul>
   </div>
 </section>
-
 <!-- 结尾 -->
 <section class="end fade-in">
   <div class="container">
@@ -792,15 +684,12 @@
     <div class="end-sign">BEST WISHES</div>
   </div>
 </section>
-
 <script>
   // 倒计时
   const weddingDate = new Date('2026-11-29T11:55:00').getTime();
-
   function updateCountdown() {
     const now = new Date().getTime();
     const distance = weddingDate - now;
-
     if (distance < 0) {
       document.getElementById('days').innerText = '00';
       document.getElementById('hours').innerText = '00';
@@ -808,56 +697,44 @@
       document.getElementById('seconds').innerText = '00';
       return;
     }
-
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
     document.getElementById('days').innerText = String(days).padStart(2, '0');
     document.getElementById('hours').innerText = String(hours).padStart(2, '0');
     document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
     document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
   }
-
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
   // 背景音乐：微信/ios稳定版，仅右上角按钮控制
-const bgMusic = document.getElementById('bgMusic');
-const musicBtn = document.getElementById('musicBtn');
-let isPlaying = false;
-
-// 按钮切换播放暂停
-musicBtn.addEventListener('click', function(e) {
-  e.stopPropagation();
-  if (isPlaying) {
-    bgMusic.pause();
-    isPlaying = false;
-    musicBtn.classList.remove('playing');
-  } else {
-    bgMusic.play()
-      .then(() => {
-        isPlaying = true;
-        musicBtn.classList.add('playing');
-      })
-      .catch(err => {
-        console.log('播放失败：', err);
-        alert('如果没有声音，请检查手机媒体音量、静音开关');
-      });
-  }
-});
-  // 页面任意位置点击一次自动播放（仅触发一次）
-  // 只用click事件，这是手机系统唯一认可的有效用户交互
-  document.addEventListener('click', function() {
-    if (!hasTriggered) {
-      startPlay();
+  const bgMusic = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicBtn');
+  let isPlaying = false;
+  musicBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (isPlaying) {
+      bgMusic.pause();
+      isPlaying = false;
+      musicBtn.classList.remove('playing');
+    } else {
+      bgMusic.play()
+        .then(() => {
+          isPlaying = true;
+          musicBtn.classList.add('playing');
+        })
+        .catch(err => {
+          console.log('播放失败：', err);
+          alert('如果没有声音，请检查手机媒体音量、静音开关');
+        });
     }
-  }, { once: true });
+  });
+
   // 花瓣/星光动效
   const particlesContainer = document.getElementById('particles');
   const symbols = ['✦', '❋', '✿', '·'];
-
   function createParticle() {
     const particle = document.createElement('div');
     particle.classList.add('particle');
@@ -867,17 +744,14 @@ musicBtn.addEventListener('click', function(e) {
     particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
     particle.style.opacity = Math.random() * 0.4 + 0.25;
     particlesContainer.appendChild(particle);
-
     setTimeout(() => {
       particle.remove();
     }, 20000);
   }
-
   setInterval(createParticle, 450);
 
   // 页面淡入
   const fadeElements = document.querySelectorAll('.fade-in');
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -885,30 +759,22 @@ musicBtn.addEventListener('click', function(e) {
       }
     });
   }, { threshold: 0.12 });
-
   fadeElements.forEach(el => observer.observe(el));
 
   // RSVP 留言
   const messagesBox = document.getElementById('messages');
-
-  // 读取已有留言
   function loadMessages() {
     const data = localStorage.getItem('weddingMessages');
     return data ? JSON.parse(data) : [];
   }
-
-  // 保存留言
   function saveMessage(msg) {
     const messages = loadMessages();
     messages.unshift(msg);
     localStorage.setItem('weddingMessages', JSON.stringify(messages));
   }
-
-  // 渲染留言
   function renderMessages() {
     const messages = loadMessages();
     messagesBox.innerHTML = '';
-
     messages.forEach(item => {
       const div = document.createElement('div');
       div.className = 'message-item';
@@ -919,39 +785,25 @@ musicBtn.addEventListener('click', function(e) {
       messagesBox.appendChild(div);
     });
   }
-
   document.getElementById('submitBtn').addEventListener('click', () => {
     const name = document.getElementById('guestName').value.trim();
     const phone = document.getElementById('guestPhone').value.trim();
     const attend = document.querySelector('input[name="attend"]:checked').value;
     const number = document.getElementById('guestNumber').value || 1;
     const message = document.getElementById('guestMessage').value.trim();
-
     if (!name) {
       alert('请填写您的姓名');
       return;
     }
-
-    saveMessage({
-      name,
-      phone,
-      attend,
-      number,
-      message
-    });
-
+    saveMessage({ name, phone, attend, number, message });
     renderMessages();
-
     document.getElementById('guestName').value = '';
     document.getElementById('guestPhone').value = '';
     document.getElementById('guestNumber').value = 1;
     document.getElementById('guestMessage').value = '';
-
     alert('感谢您的祝福！');
   });
-
   renderMessages();
 </script>
-
 </body>
 </html>
